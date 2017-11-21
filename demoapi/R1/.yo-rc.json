@@ -1,0 +1,122 @@
+{
+  "generator-cedrus-api": {
+    "haveConfigFile": true,
+    "discover": {
+      "ask": false,
+      "apiConsumes": [
+        "application/json"
+      ],
+      "apiProduces": [
+        "application/json"
+      ]
+    },
+    "detail": {
+      "ask": false,
+      "isPublic": true,
+      "httpMethods": [
+        "get",
+        "post",
+        "patch"
+      ],
+      "httpStatusCodes": [
+        "204",
+        "404",
+        "500"
+      ],
+      "versioning": {
+        "enabled": true,
+        "type": "uri",
+        "versionNumber": [
+          "v1"
+        ],
+        "uriOrder": "versionNumberFirst",
+        "contentTypeOrder": "versionNumberFirst",
+        "customHeaderName": "versionNumberFirst"
+      },
+      "apiData": {
+        "returnDataType": "Test Data"
+      },
+      "records": {
+        "limit": "15"
+      },
+      "cache": {
+        "RedisEnable": false,
+        "RedisHost": "pub-redis-19334.dal-05.1.sl.garantiadata.com",
+        "RedisPort": "19334",
+        "RedisPassword": "zKvyYzznhsdvYwgq",
+        "RedisExpire": 180
+      },
+      "pagination": {
+        "PaginationEnable": false
+      },
+      "filter": {
+        "FilterEnable": true
+      }
+    },
+    "deploy": {
+      "ask": false,
+      "apiApplicationType": "nodejs",
+      "openWhisk": {
+        "OpenWhiskEnable": false
+      },
+      "tls": {
+        "TLSEnable": false
+      },
+      "cloudFoundry": {
+        "appName": "uniqueapp",
+        "appMemory": "256M"
+      }
+    },
+    "apiOverview": {
+      "apiName": "demoapi",
+      "apiBasePath": "/demoapi",
+      "apiDescription": "Demo purposes"
+    },
+    "dataInput": {
+      "dataInputType": "JSON Input"
+    },
+    "JSONExtraction": [
+      {
+        "resourceName": "Customer",
+        "jsonFilePath": "{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\"},\"address\":{\"type\":\"object\",\"properties\":{\"city\":{\"type\":\"string\"}},\"required\":[\"city\"]}},\"required\":[\"name\"]}",
+        "jsonSchema": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "address": {
+              "type": "object",
+              "properties": {
+                "city": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "city"
+              ]
+            }
+          },
+          "required": [
+            "name"
+          ]
+        },
+        "isPublic": true,
+        "httpMethods": [
+          "get",
+          "post",
+          "patch"
+        ],
+        "httpStatusCodes": [
+          "204",
+          "404",
+          "500"
+        ],
+        "requireTestDataType": "Test Data",
+        "apiFakerMappingFileProvided": false,
+        "recordsLimit": "15",
+        "requireQuery": false
+      }
+    ]
+  }
+}

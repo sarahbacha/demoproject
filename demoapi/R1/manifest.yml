@@ -1,0 +1,4 @@
+---
+applications:
+- name: uniqueapp
+  memory: 256M
